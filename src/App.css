@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+	--font-family: 'Roboto', sans-serif;
+	--news-color: #1a1a1a;
+	--news-background-color: rgb(255, 255, 255, 0.9);
+	--crypto-color: #dcdcdc;
+}
+
+html {
+	scrollbar-color: #777 transparent;
+}
+
+/* for chrome and the others, but neither of them works, the one above only supported by firefox yet
+html::-webkit-scrollbar {
+	background-color: ;
+}
+html::-webkit-scrollbar-thumb {
+	background-color: #777;
+}
+
+html::-webkit-scrollbar-track {
+	background-color: transparent;
+} */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	height: 100vh;
+	scroll-snap-align: start;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	overflow-x: hidden;
+}
+
+.App {
+	background-image: url('./background/mountains.jpg');
+	background-repeat: no-repeat;
+	background-size: 100vw 100vh;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.timeWeatherContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ================================================================= */
+/* WEATHER */
+
+.weatherContainer {
+	background: transparent;
+	position: absolute;
+	top: 15rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 4rem;
+	padding: 2rem;
+	padding-right: 3rem;
+	border-radius: 20px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09), 0 10px 10px rgba(0, 0, 0, 0.12);
+}
+
+.location {
+	/* font-family: 'Roboto', sans-serif; */
+	font-size: 40px;
+}
+
+.Temperature {
+	/* font-family: 'Roboto', sans-serif; */
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.weatherPicture {
+	width: 5rem;
+	height: 5rem;
+}
+
+/* ===================================================== */
+/* TIME */
+
+.timeContainer {
+	position: relative;
+	top: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 25px;
+	transition-duration: 0.25s;
+}
+
+.timeContainer:hover {
+	background-color: black;
+	color: white;
+	padding: 0 1rem;
+	border-radius: 20px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09), 0 10px 10px rgba(0, 0, 0, 0.12);
+}
+
+.time {
+	padding: 0;
+	margin: 0;
+	font-family: var(--font-family);
+	font-size: 100px;
+	font-weight: 100;
+}
+
+/* ================================================================= */
+/* CRYPTO */
+
+.mainCryptoContainer {
+	position: absolute;
+	width: 100vw;
+	top: 30rem;
+	display: flex;
+	justify-content: center;
+}
+
+.cryptoContainer {
+	width: 85%;
+	display: flex;
+	justify-content: space-around;
+	gap: 4rem;
+	margin: 2rem 2rem;
+}
+
+.cryptos {
+	width: 15%;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.logos {
+	width: 30px;
+	height: 30px;
+}
+
+.cryptoName {
+	padding-bottom: 1px;
+	color: var(--crypto-color);
+	font-family: var(--font-family);
+	font-size: 20px;
+	font-weight: 100;
+}
+
+.prices {
+	color: var(--crypto-color);
+	font-family: var(--font-family);
+	font-size: 30px;
+	font-weight: 300;
+}
+
+/* ===================================================== */
+/* NEWS */
+
+.mainNewsContainer {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--crypto-color);
+	font-size: 30px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.news {
+	position: absolute;
+	left: 2rem;
+	color: rgba(0, 0, 0, 0.5);
+	font-family: var(--font-family);
+	font-size: 15rem;
+	font-weight: bold;
+}
+
+.newsSelect {
+	position: absolute;
+	background-color: var(--news-background-color);
+	width: 7.4rem;
+	height: 1.5rem;
+	top: 15rem;
+	left: 3.5rem;
+	padding: 0 0.5rem;
+	border: none;
+	border-radius: 10px;
+	color: var(--news-color);
+}
+
+.newsContainer {
+	position: relative;
+	background-color: var(--news-background-color);
+	min-width: 70%;
+	max-width: 70%;
+	top: 20rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 1rem;
+	padding: 1.5rem;
+	border-radius: 7px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09), 0 10px 10px rgba(0, 0, 0, 0.12);
+}
+
+.title {
+	border-bottom: 2px solid black;
+	color: black;
+	font-size: 25px;
+}
+
+.article {
+	padding: 1rem 0;
+	padding-left: 0.5rem;
+	color: var(--news-color);
+	font-size: 20px;
+}
+
+.link {
+	padding: 0.3rem 0;
+	padding-left: 0.5rem;
+	color: var(--news-color);
+	font-size: 10px;
+}
+
+.source {
+	padding: 0.3rem 0 0.5rem 0;
+	color: var(--news-color);
+	font-size: 15px;
+}
