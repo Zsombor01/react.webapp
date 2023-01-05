@@ -11,18 +11,6 @@ html {
 	scrollbar-color: #777 transparent;
 }
 
-/* for chrome and the others, but neither of them works, the one above only supported by firefox yet
-html::-webkit-scrollbar {
-	background-color: ;
-}
-html::-webkit-scrollbar-thumb {
-	background-color: #777;
-}
-
-html::-webkit-scrollbar-track {
-	background-color: transparent;
-} */
-
 * {
 	box-sizing: border-box;
 	margin: 0;
