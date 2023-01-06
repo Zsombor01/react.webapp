@@ -9,8 +9,64 @@ export default function News() {
 	// https://newsapi.org/docs/endpoints/top-headlines
 	// API key: 3cf06040992d4a18bff78670704b4ce7
 	const [news, setNews] = useState([]);
+	const [country, setCountry] = useState('us');
 	const [changeCategoryOfNews, setChangeCategoryOfNews] = useState('business'); //examples: business entertainment general health science sports technology
-	const [country, setCountry] = useState();
+	const countries = [
+		'ae',
+		'ar',
+		'at',
+		'au',
+		'be',
+		'bg',
+		'br',
+		'ca',
+		'ch',
+		'cn',
+		'co',
+		'cu',
+		'cz',
+		'de',
+		'eg',
+		'fr',
+		'gb',
+		'gr',
+		'hk',
+		'hu',
+		'id',
+		'ie',
+		'il',
+		'in',
+		'it',
+		'jp',
+		'kr',
+		'lt',
+		'lv',
+		'ma',
+		'mx',
+		'my',
+		'ng',
+		'nl',
+		'no',
+		'nz',
+		'ph',
+		'pl',
+		'pt',
+		'ro',
+		'rs',
+		'ru',
+		'sa',
+		'se',
+		'sg',
+		'si',
+		'sk',
+		'th',
+		'tr',
+		'tw',
+		'ua',
+		'us',
+		've',
+		'za',
+	];
 	const { ref, inView } = useInView({
 		threshold: 0.05, // a number between 0 and 1, it means the given element's 10% should be visible before the animation starts.
 	});
@@ -20,13 +76,13 @@ export default function News() {
 	const animation3 = useAnimation();
 	useEffect(() => {
 		fetch(
-			`https://newsapi.org/v2/top-headlines?country=us&category=${changeCategoryOfNews}&apiKey=3cf06040992d4a18bff78670704b4ce7`
+			`https://newsapi.org/v2/top-headlines?country=${country}&category=${changeCategoryOfNews}&apiKey=3cf06040992d4a18bff78670704b4ce7`
 		)
 			.then((res) => res.json())
 			.then((data) => {
 				setNews(data.articles);
 			});
-	}, [changeCategoryOfNews]);
+	}, [changeCategoryOfNews, country]);
 
 	//The animations are done with framer-motion package
 	//https://www.framer.com/docs/introduction/
@@ -78,6 +134,10 @@ export default function News() {
 		setChangeCategoryOfNews(e.target.value);
 	}
 
+	function changeCountry(e) {
+		setCountry(e.target.value);
+	}
+
 	return (
 		<div ref={ref} className='mainNewsContainer'>
 			<motion.div
@@ -114,6 +174,16 @@ export default function News() {
 				<option className='options' value='technology'>
 					Technology
 				</option>
+			</motion.select>
+			<motion.select
+				className='countrySelect'
+				value={country}
+				onChange={changeCountry}
+				animate={animation3}
+			>
+				{countries.map((country, index) => {
+					return <option key={index}>{country}</option>;
+				})}
 			</motion.select>
 			{news.map((news, index) => {
 				return (
