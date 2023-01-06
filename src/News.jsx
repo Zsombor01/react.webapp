@@ -10,6 +10,7 @@ export default function News() {
 	// API key: 3cf06040992d4a18bff78670704b4ce7
 	const [news, setNews] = useState([]);
 	const [changeCategoryOfNews, setChangeCategoryOfNews] = useState('business'); //examples: business entertainment general health science sports technology
+	const [country, setCountry] = useState();
 	const { ref, inView } = useInView({
 		threshold: 0.05, // a number between 0 and 1, it means the given element's 10% should be visible before the animation starts.
 	});
@@ -38,14 +39,14 @@ export default function News() {
 				x: 0,
 				opacity: 1,
 				transition: {
-					duration: 1.2,
+					duration: 1,
 				},
 			});
 			animation2.start({
 				x: 0,
 				opacity: 1,
 				transition: {
-					duration: 1.2,
+					duration: 1,
 					delay: 0.6,
 				},
 			});
@@ -53,27 +54,18 @@ export default function News() {
 				x: 0,
 				opacity: 1,
 				transition: {
-					duration: 1.2,
-					delay: 0.8,
-				},
-			});
-		}
-		if (inView) {
-			animation3.start({
-				opacity: 1,
-				transition: {
-					duration: 1.2,
-					delay: 1.85,
+					duration: 1,
+					delay: 1.6,
 				},
 			});
 		}
 		if (!inView) {
 			animation.start({
-				x: '-45vw',
+				x: '-70vw',
 				opacity: 0,
 			});
 			animation2.start({
-				x: '-60vw',
+				x: '-70vw',
 				opacity: 0,
 			});
 			animation3.start({
