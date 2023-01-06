@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# react.webapp
+This project is still in process, because i have a ton of plan with it. My main goal with this project is to explore React as deeply as i can and also, make something usefull.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You can find the project's files in the src directory.
 
-## Available Scripts
+Here you can read a small "introduction" of all the components in this project.
 
-In the project directory, you can run:
+App.jsx
+This is the 'main' component, where i made 2 API fetchs one for the weather component (which i will talk about later) and one to be able to ask down the webpage user's location. With the help of these 2 APIs I can tell the webpage user's current location (if they allow it ofc.) and the weather in their current location.
+Also, here is where i combined all the components to get the current look of the page.
 
-### `npm start`
+Time.jsx
+I made a clock for the head of the website + added some animation to it with CSS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Weather.jsx
+This component writes out the current weather in your current location.
+For this I used an API request, which is made in the App.jsx and with help of the so called props (react element used to transfer data from one component to another) I placed this data into the Weather component.
+The weather icons change depending on the current temperature also.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Crypto.jsx
+This component is responsible for the given current cryptocurrency prices to be written out on the page.  
+This component also contains an API usage.
 
-### `npm test`
+News.jsx
+This is basically the second page of this react webb app where the user is able to check on the latest news in the world, with the help of an API. User can select from business, entertainment, general, health, science, sports and technology news.
+I also used a react specific animation library called framer-motion, to make this section a bit cooler.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+App.css
+This component is responsible for all the styling on the page.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the works: 
+- I want to make the hole news article readable on the page.
+- I want to add more icons to the changing weather icons section of the weather.jsx component.
