@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 //with useAnimation we can start and stop an animation.
 import { useInView } from 'react-intersection-observer';
-import { renderMatches } from 'react-router-dom';
 
 export default function News() {
 	// https://newsapi.org/docs/endpoints/top-headlines
@@ -11,62 +10,14 @@ export default function News() {
 	const [news, setNews] = useState([]);
 	const [country, setCountry] = useState('us');
 	const [changeCategoryOfNews, setChangeCategoryOfNews] = useState('business'); //examples: business entertainment general health science sports technology
+	//prettier-ignore
 	const countries = [
-		'ae',
-		'ar',
-		'at',
-		'au',
-		'be',
-		'bg',
-		'br',
-		'ca',
-		'ch',
-		'cn',
-		'co',
-		'cu',
-		'cz',
-		'de',
-		'eg',
-		'fr',
-		'gb',
-		'gr',
-		'hk',
-		'hu',
-		'id',
-		'ie',
-		'il',
-		'in',
-		'it',
-		'jp',
-		'kr',
-		'lt',
-		'lv',
-		'ma',
-		'mx',
-		'my',
-		'ng',
-		'nl',
-		'no',
-		'nz',
-		'ph',
-		'pl',
-		'pt',
-		'ro',
-		'rs',
-		'ru',
-		'sa',
-		'se',
-		'sg',
-		'si',
-		'sk',
-		'th',
-		'tr',
-		'tw',
-		'ua',
-		'us',
-		've',
-		'za',
+		'ae','ar','at','au','be','bg','br','ca','ch','cn','co','cu','cz','de','eg','fr','gb','gr','hk','hu','id','ie','il','in','it','jp','kr','lt','lv','ma','mx','my','ng','nl','no','nz','ph','pl','pt','ro','rs','ru','sa','se','sg','si','sk','th','tr','tw','ua','us','ve','za',
 	];
+	//prettier-ignore
+	const business = [
+		'business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'
+	]
 	const { ref, inView } = useInView({
 		threshold: 0.05, // a number between 0 and 1, it means the given element's 10% should be visible before the animation starts.
 	});
@@ -86,9 +37,6 @@ export default function News() {
 
 	//The animations are done with framer-motion package
 	//https://www.framer.com/docs/introduction/
-	//in the package.json u can see the downloaded packages.
-	//we want that the animation only starts when we view that part of the page. for that we need npm install react-intersection-observer --save.
-	//the animation should only start when the given element is in the given view referenced by {ref}
 	useEffect(() => {
 		if (inView) {
 			animation.start({
@@ -140,40 +88,18 @@ export default function News() {
 
 	return (
 		<div ref={ref} className='mainNewsContainer'>
-			<motion.div
-				animate={animation} // to trigger the animation on this specific element
-				className='news'
-			>
+			<motion.div animate={animation} className='news'>
 				News
 			</motion.div>
-			{/* business entertainment general health science sports technology */}
 			<motion.select
 				className='newsSelect'
 				animate={animation3}
 				value={changeCategoryOfNews}
 				onChange={newsSelect}
 			>
-				<option className='options' value='business'>
-					Business
-				</option>
-				<option className='options' value='entertainment'>
-					Entertainment
-				</option>
-				<option className='options' value='general'>
-					General
-				</option>
-				<option className='options' value='health'>
-					Health
-				</option>
-				<option className='options' value='science'>
-					Science
-				</option>
-				<option className='options' value='sports'>
-					Sports
-				</option>
-				<option className='options' value='technology'>
-					Technology
-				</option>
+				{business.map((business, index) => {
+					return <option key={index}>{business}</option>;
+				})}
 			</motion.select>
 			<motion.select
 				className='countrySelect'
