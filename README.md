@@ -1,4 +1,5 @@
 # react.webapp
+
 This project is still in process, because i have a ton of plan with it. My main goal with this project is to explore React as deeply as i can and also, make something usefull.
 
 You can find the project's files in the src directory.
@@ -28,6 +29,7 @@ I also used a react specific animation library called framer-motion, to make thi
 App.css
 This component is responsible for all the styling on the page.
 
-In the works: 
-- I want to make the hole news article readable on the page.
+In the works:
+
+- I want to make the hole news article readable on the page. - To my current knowledge this is sadly not available with the free API plan.
 - I want to add more icons to the changing weather icons section of the weather.jsx component.

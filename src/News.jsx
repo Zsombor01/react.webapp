@@ -121,7 +121,10 @@ export default function News() {
 						<p className='title'>{news.title}</p>
 						<p className='article'>{news.content}</p>
 						<a className='link' href={news.url} target='_blank'>
-							{news.url}
+							<button className='ReadMoreBtn'>
+								Read More
+								{/* {news.url} */}
+							</button>
 						</a>
 						<span className='source'>Source: {news.source.name}</span>
 					</motion.div>

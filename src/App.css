@@ -188,7 +188,20 @@ body {
 	left: 3.5rem;
 	padding: 0 0.5rem;
 	border: none;
-	border-radius: 10px;
+	border-radius: 8px;
+	color: var(--news-color);
+}
+
+.countrySelect {
+	position: absolute;
+	background-color: var(--news-background-color);
+	width: 4rem;
+	height: 1.5rem;
+	top: 17rem;
+	left: 3.5rem;
+	padding: 0 0.5rem;
+	border: none;
+	border-radius: 8px;
 	color: var(--news-color);
 }
 
@@ -227,23 +240,18 @@ body {
 	font-size: 10px;
 }
 
-.source {
-	padding: 0.3rem 0 0.5rem 0;
-	color: var(--news-color);
-	font-size: 15px;
+.ReadMoreBtn {
+	padding: 0.1rem 0.5rem;
+	border-radius: 7px;
+	border: 1px solid black;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03), 0 10px 10px rgba(0, 0, 0, 0.03);
 }
 
-.countrySelect {
-	position: absolute;
-	background-color: var(--news-background-color);
-	width: 4rem;
-	height: 1.5rem;
-	top: 17rem;
-	left: 3.5rem;
-	padding: 0 0.5rem;
-	border: none;
-	border-radius: 10px;
+.source {
+	padding: 0.7rem 0;
+	padding-left: 0.5rem;
 	color: var(--news-color);
+	font-size: 15px;
 }
 
 @media screen and (max-width: 1020px) {
@@ -286,6 +294,10 @@ body {
 	.newsContainer {
 		top: 17rem;
 	}
+	.countrySelect {
+		top: 14.5rem;
+		left: 2rem;
+	}
 }
 
 @media screen and (max-width: 520px) {
@@ -300,6 +312,10 @@ body {
 	.newsContainer {
 		top: 16rem;
 	}
+	.countrySelect {
+		top: 13rem;
+		left: 0.5rem;
+	}
 }
 
 @media screen and (max-width: 440px) {
@@ -313,6 +329,10 @@ body {
 	}
 	.newsContainer {
 		top: 14rem;
+	}
+	.countrySelect {
+		top: 11.5rem;
+		left: 0.2rem;
 	}
 }
 
