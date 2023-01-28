@@ -4,6 +4,7 @@ import Time from './Time.jsx';
 import Crypto from './Crypto.jsx';
 import Weather from './Weather.jsx';
 import News from './News';
+import TestPriceChart from './TestPriceChart';
 
 function App() {
 	const [positionLatitude, setPositionLatitude] = useState();
@@ -91,6 +92,9 @@ function App() {
 			</section>
 			<section>
 				<News />
+			</section>
+			<section>
+				<TestPriceChart />
 			</section>
 		</div>
 	);

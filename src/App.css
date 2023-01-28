@@ -243,7 +243,7 @@ body {
 .ReadMoreBtn {
 	padding: 0.1rem 0.5rem;
 	border-radius: 7px;
-	border: 1px solid black;
+	border: 1px solid grey;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03), 0 10px 10px rgba(0, 0, 0, 0.03);
 }
 
@@ -253,6 +253,12 @@ body {
 	color: var(--news-color);
 	font-size: 15px;
 }
+
+/* ===================================================== */
+/* TestPriceChartDiv */
+
+/* ===================================================== */
+/* Media-Queries */
 
 @media screen and (max-width: 1020px) {
 	.cryptoContainer {
