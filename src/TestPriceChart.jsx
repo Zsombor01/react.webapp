@@ -1,10 +1,28 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Plot from 'react-plotly.js';
+import { Chart } from 'react-chartjs-2';
+import LineChart from './components/LineChart';
 
 export default function TestPriceChart() {
 	const [historicalPrices, setHistoricalPrices] = useState([]);
-	const [justPrices, setJustPrices] = useState([]);
+	const [logPrices, setLogPrices] = useState({
+		labels: historicalPrices.map((price) => price[1]),
+		datasets: [
+			{
+				label: 'Valami majd lesz itt',
+				data: historicalPrices.map((price) => price[0]),
+				backgroundColor: [
+					'rgba(75,192,192,1)',
+					'#ecf0f1',
+					'#50AF95',
+					'#f3ba2f',
+					'#2a71d0',
+				],
+				borderColor: 'black',
+				borderWidth: 2,
+			},
+		],
+	});
 
 	useEffect(() => {
 		fetch(
@@ -14,47 +32,17 @@ export default function TestPriceChart() {
 			.then((data) => {
 				setHistoricalPrices(data.prices);
 			});
-		console.log(historicalPrices);
-
-		function makingPriceArray() {
-			historicalPrices.map((e) => {
-				// console.log(e[1]);
-				setJustPrices(e[1][1]);
-			});
-		}
-		makingPriceArray();
-		console.log(justPrices);
+		// if u log inside the useEffect u will se the result of what u logged out in the previous cycle
 	}, []);
-
+	console.log(historicalPrices);
 	/* Making a chart */
-	makingChart(() => {
-		let xArray = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
-		let yArray = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
-
-		// Define Data
-		const data = [
-			{
-				x: xArray,
-				y: yArray,
-				mode: 'lines',
-			},
-		];
-
-		// Define Layout
-		const layout = {
-			xaxis: { range: [40, 160], title: 'Square Meters' },
-			yaxis: { range: [5, 16], title: 'Price in Millions' },
-			title: 'House Prices vs. Size',
-		};
-
-		// Display using Plotly
-		Plotly.newPlot('myPlot', data, layout);
-	});
 
 	return (
 		<div className='TestPriceChartDiv'>
 			<p>THis is a test line </p>
-			<div>{makingChart()}</div>
+			<div style={{ width: 700 }}>
+				<LineChart chartData={logPrices} />
+			</div>
 		</div>
 	);
 }
