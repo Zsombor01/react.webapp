@@ -9,6 +9,7 @@ import {
 	PointElement,
 	Legend,
 	Tooltip,
+	Colors,
 } from 'chart.js';
 
 ChartJS.register(
@@ -17,7 +18,8 @@ ChartJS.register(
 	LinearScale,
 	PointElement,
 	Legend,
-	Tooltip
+	Tooltip,
+	Colors
 );
 
 export default function TestPriceChart() {
@@ -29,7 +31,7 @@ export default function TestPriceChart() {
 			{
 				label: 'Previous prices',
 				data: price,
-				backgroundColor: 'grey',
+				backgroundColor: '#000',
 				borderColor: 'black',
 				pointBorderColor: 'black',
 				fill: false,
@@ -37,21 +39,39 @@ export default function TestPriceChart() {
 			},
 		],
 	};
+
 	const options = {
 		radius: 0,
 		hitRadius: 30,
 		plugins: {
-			legend: true,
+			legend: {
+				labels: false,
+			},
 		},
 		scales: {
 			x: {
+				ticks: {
+					color: 'red',
+					size: 10,
+				},
 				grid: {
 					display: false,
 				},
+				border: {
+					color: 'black',
+					width: 2,
+				},
 			},
 			y: {
+				ticks: {
+					color: 'red',
+				},
 				grid: {
 					display: false,
+				},
+				border: {
+					color: 'black',
+					width: 2,
 				},
 			},
 		},
@@ -68,7 +88,7 @@ export default function TestPriceChart() {
 			.then((data) => {
 				setDate(
 					data.prices.map((date) => {
-						return date[0];
+						return new Date(date[0]).getDate();
 					})
 				);
 				setPrice(
