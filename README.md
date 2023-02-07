@@ -23,7 +23,7 @@ This component is responsible for the given current cryptocurrency prices to be 
 This component also contains an API usage.
 
 News.jsx
-This is basically the second page of this react webb app where the user is able to check on the latest news in the world, with the help of an API. User can select from business, entertainment, general, health, science, sports and technology news.
+This is basically the second page of this react webb app where the user is able to check on the latest news in the world, with the help of an API. User can select from business, entertainment, general, health, science, sports and technology news. The user also able to choose languages.
 I also used a react specific animation library called framer-motion, to make this section a bit cooler.
 
 App.css
@@ -31,5 +31,5 @@ This component is responsible for all the styling on the page.
 
 In the works:
 
-- I want to make the hole news article readable on the page. - To my current knowledge this is sadly not available with the free API plan.
+- Currently working on a solution to make a chart for each displayed cryptocurrency on the 1st page.
 - I want to add more icons to the changing weather icons section of the weather.jsx component.
