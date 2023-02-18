@@ -111,7 +111,7 @@ export default function News() {
 					return <option key={index}>{country}</option>;
 				})}
 			</motion.select>
-			{news.map((news, index) => {
+			{news?.map((news, index) => {
 				return (
 					<motion.div
 						animate={animation2}
