@@ -31,7 +31,7 @@ This component is responsible for all the styling on the page.
 
 Update:
 
-- Deployed the website successfully (finally), bit turns out the API that i used for the news only works for on the development server (unless i pay for it). I try to search for some sort of solution...
+- Deployed the website successfully (finally), but turns out the API that i used for the news only works for on the development server (unless i pay for it). I try to search for some sort of solution...
 
 In the works:
 
