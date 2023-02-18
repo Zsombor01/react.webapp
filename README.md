@@ -29,6 +29,10 @@ I also used a react specific animation library called framer-motion, to make thi
 App.css
 This component is responsible for all the styling on the page.
 
+Update:
+
+- Deployed the website successfully (finally), bit turns out the API that i used for the news only works for on the development server (unless i pay for it). I try to search for some sort of solution...
+
 In the works:
 
 - Currently working on a solution to make a chart for each displayed cryptocurrency on the 1st page.
