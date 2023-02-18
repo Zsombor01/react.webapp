@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react.webapp/static/css/main.4f70b774.css",
-    "main.js": "/react.webapp/static/js/main.f6a9c435.js",
+    "main.js": "/react.webapp/static/js/main.f582bcf3.js",
     "static/media/mountains.jpg": "/react.webapp/static/media/mountains.d830fb257a909df4865f.jpg",
     "index.html": "/react.webapp/index.html",
     "main.4f70b774.css.map": "/react.webapp/static/css/main.4f70b774.css.map",
-    "main.f6a9c435.js.map": "/react.webapp/static/js/main.f6a9c435.js.map"
+    "main.f582bcf3.js.map": "/react.webapp/static/js/main.f582bcf3.js.map"
   },
   "entrypoints": [
     "static/css/main.4f70b774.css",
-    "static/js/main.f6a9c435.js"
+    "static/js/main.f582bcf3.js"
   ]
 }
