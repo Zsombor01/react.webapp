@@ -10,6 +10,7 @@ import {
 	Legend,
 	Tooltip,
 	Colors,
+	Filler,
 } from 'chart.js';
 
 ChartJS.register(
@@ -19,7 +20,8 @@ ChartJS.register(
 	PointElement,
 	Legend,
 	Tooltip,
-	Colors
+	Colors,
+	Filler
 );
 
 export default function TestPriceChart() {
@@ -31,10 +33,10 @@ export default function TestPriceChart() {
 			{
 				label: 'Previous prices',
 				data: price,
-				backgroundColor: '#000',
 				borderColor: 'black',
+				backgroundColor: 'rgba(242, 242, 242, 0.2)',
 				pointBorderColor: 'black',
-				fill: false,
+				fill: true,
 				tension: 0.4, //for the line to be more 'curvier'
 			},
 		],
@@ -43,6 +45,7 @@ export default function TestPriceChart() {
 	const options = {
 		radius: 0,
 		hitRadius: 30,
+		backgroundColor: 'black',
 		plugins: {
 			legend: {
 				labels: false,
@@ -74,9 +77,6 @@ export default function TestPriceChart() {
 					width: 2,
 				},
 			},
-		},
-		grid: {
-			display: false,
 		},
 	};
 
