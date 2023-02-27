@@ -115,7 +115,7 @@ body {
 .mainCryptoContainer {
 	position: absolute;
 	width: 100vw;
-	top: 30rem;
+	top: 28rem; /* was 30 originally before chart */
 	display: flex;
 	justify-content: center;
 }
@@ -256,6 +256,13 @@ body {
 
 /* ===================================================== */
 /* TestPriceChartDiv */
+
+.TestPriceChartDiv {
+	position: absolute;
+	top: 46rem;
+	margin: 0 50%;
+	transform: translate(-50%, -50%);
+}
 
 /* ===================================================== */
 /* Media-Queries */

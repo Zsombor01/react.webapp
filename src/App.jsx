@@ -11,6 +11,7 @@ function App() {
 	const [positionLongitude, setPositionLongitude] = useState();
 	const [currentTemperature, setCurrentTemperature] = useState();
 	const [currentLocation, setCurrentLocation] = useState();
+	const [elementVisible, setElementVisible] = useState(false);
 
 	const BASE_URL = `https://api.open-meteo.com/v1/forecast?latitude=${positionLatitude}&longitude=${positionLongitude}&hourly=temperature_2m&current_weather=true`;
 
@@ -48,7 +49,6 @@ function App() {
 			let long = position.coords.longitude;
 			setPositionLongitude(long);
 			setPositionLatitude(lat);
-			// console.log(positionLatitude, positionLongitude);
 		}
 
 		function error() {
@@ -73,11 +73,8 @@ function App() {
 				});
 		}
 		getLocation();
-		//now finally it only refreshes itself when the value of positionLongitude and positionLatitude changes.
-		//TODO: https://dmitripavlutin.com/react-useeffect-infinite-loop/
 	}, [positionLatitude, positionLongitude]);
 
-	//TODO: should i separate all the fetch functions + Start Stocks API im already registered with bzsozsotest
 	return (
 		<div className='App'>
 			<section>
@@ -88,14 +85,23 @@ function App() {
 						currentLocation={currentLocation}
 					/>
 				</div>
-				<Crypto />
+				{elementVisible ? (
+					<div>
+						<TestPriceChart />
+					</div>
+				) : null}
+				<Crypto
+					changeElementVisibility={(elementVisible) =>
+						setElementVisible(elementVisible)
+					}
+				/>
 			</section>
 			<section>
 				<News />
 			</section>
-			<section>
+			{/* <section>
 				<TestPriceChart />
-			</section>
+			</section> */}
 		</div>
 	);
 }

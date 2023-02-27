@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-export default function Crypto() {
+export default function Crypto(props) {
 	const [btc, setBtc] = useState();
 	const [eth, setEth] = useState();
 	const [sol, setSol] = useState();
@@ -33,7 +33,10 @@ export default function Crypto() {
 	return (
 		<div className='mainCryptoContainer'>
 			<div className='cryptoContainer'>
-				<div className='cryptos'>
+				<div
+					className='cryptos'
+					onClick={() => props.changeElementVisibility(true)}
+				>
 					<div>
 						<p className='cryptoName'>Bitcoin</p>
 						<span className='prices'>${btc}</span>
