@@ -2,8 +2,6 @@
 
 This project is still in process, because i have a ton of plan with it. My main goal with this project is to explore React as deeply as i can and also, make something usefull.
 
-You can find the project's files in the src directory.
-
 Here you can read a small "introduction" of all the components in this project.
 
 App.jsx
