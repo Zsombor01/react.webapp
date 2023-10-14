@@ -1,6 +1,6 @@
 # react.webapp
 
-This project is still in process, because i have a ton of plan with it. My main goal with this project is to explore React as deeply as i can and also, make something usefull.
+My main goal with this project is to explore React as deeply as i can and also, make something usefull for myself.
 
 Here you can read a small "introduction" of all the components in this project.
 
